@@ -1,0 +1,35 @@
+<div class="toolbar toolbar-top">
+	<div class="d-flex justify-content-center justify-content-md-between flex-wrap">
+		<div class="pager_left">
+			<div class="d-flex align-items-center">
+				<p class="amount m-0">Items {{ __SELF__.paginationInfo.from }} to {{ __SELF__.paginationInfo.to }} of {{ __SELF__.paginationInfo.total }} total</p>
+				<form id="sorter-form" class="sorter-form d-flex align-items-center">
+					<div class="sort-by">
+						<label>Sort By</label>
+						<select class="bordered-box special-styled-select py-1 js-select-sort" name="sort">
+				            <option value="id" {{ __SELF__.sort == 'position' ? 'selected' }}>Position</option>
+				            <option value="name" {{ __SELF__.sort == 'name' ? 'selected' }}>Name</option>
+				        </select>
+					</div>
+					<div class="limiter">
+						<label>Show</label>
+						<select class="bordered-box special-styled-select py-1 js-select-limit" name="limit">
+				            <option value="15" {{ __SELF__.perPage == 15 ? 'selected' }}>15</option>
+				            <option value="25" {{ __SELF__.perPage == 25 ? 'selected' }}>25</option>
+				            <option value="35" {{ __SELF__.perPage == 35 ? 'selected' }}>35</option>
+				        </select>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="pager_right mt-2 mt-md-0">
+			<div class="pages">
+				{% if items.hasPages %}
+					<div class="pages">
+						{{ items|raw }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

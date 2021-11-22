@@ -1,0 +1,15 @@
+{% if __SELF__.itemsCount|length > 0 %}
+	<div class="">
+		{% partial __SELF__ ~ '::filters' items = __SELF__.items %}
+	</div>
+    {% partial __SELF__ ~ '::items' items=__SELF__.items %}
+    <div class="mt-3 mt-lg-4 mt-xl-5">
+		{% partial __SELF__ ~ '::filters' items = __SELF__.items %}
+	</div>
+{% else %}
+    {% partial __SELF__ ~ '::empty' %}
+{% endif %}
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}

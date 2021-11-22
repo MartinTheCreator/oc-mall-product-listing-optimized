@@ -1,0 +1,6 @@
+plugin:
+    name: 'mmatovski.mallextended::lang.plugin.name'
+    description: 'mmatovski.mallextended::lang.plugin.description'
+    author: Mmatovski
+    icon: oc-icon-shopping-cart
+    homepage: ''

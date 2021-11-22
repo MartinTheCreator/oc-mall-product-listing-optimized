@@ -1,0 +1,18 @@
+{% put scripts %}
+    <script>
+        $('.sorter-form').find('select').on('change', function(){
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageParam = urlParams.get('page');
+            const queryParam = urlParams.get('q');
+
+            if(pageParam)
+                $('.sorter-form').append(`<input name="page" value="${pageParam}" hidden />`);
+
+            if(queryParam)
+                $('.sorter-form').append(`<input name="q" value="${queryParam}" hidden />`);
+
+            $(this).parents('.sorter-form').submit();
+        });
+
+    </script>
+{% endput %}

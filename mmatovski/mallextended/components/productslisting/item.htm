@@ -1,0 +1,15 @@
+<div class="mall-products-item col-6 col-sm-4 col-md-3 col-xl-25 product-col">
+    {% set category_slug = __SELF__.useParentCategory ? item.categories[0].slug : category.slug %}
+    <a href="{{ 'product'|page({category: category_slug, slug: item.slug}) }}"
+       data-mall-item-id="{{ item.prefixedId }}"
+       title="{{ item.name }}" 
+       class="product-link"
+    >
+        <div class="product-image-wrapper d-flex align-items-center justify-content-center ratio-1 p-2 p-lg-4 p-xl-4">
+            {% partial __SELF__ ~ '::image' image=item.image %}
+        </div>
+        <h2 class="h6 semi-bold product-title">
+            {{ item.name }}
+        </h2>
+    </a>
+</div>

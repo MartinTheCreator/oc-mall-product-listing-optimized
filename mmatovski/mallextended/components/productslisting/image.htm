@@ -1,0 +1,5 @@
+{% if item.image %}
+<img src="{{ item.image.thumb(240, 240, { mode: 'fit' }) }}" alt="{{ item.name }}" class="img-fluid product_thumb-image" />
+{% else %}
+<img src="{{ 'assets/img/placeholder.jpg'|theme }}" alt="{{ item.name }}" class="img-fluid product_thumb-image" />
+{% endif %}
